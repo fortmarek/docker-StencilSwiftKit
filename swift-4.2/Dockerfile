@@ -1,4 +1,4 @@
-FROM swift:4.2.0
+FROM swift:4.2
 
 RUN apt-get update -y && \
 apt-get -y install wget rubygems ruby-all-dev
