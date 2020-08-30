@@ -17,8 +17,6 @@ cd ..
 
 RUN ruby-install ruby 2.7.1
 
-# COPY ./gemrc /root/.gemrc
-
 ENV GEM_HOME /usr/local/bundle
 ENV BUNDLE_PATH="$GEM_HOME" \
     BUNDLE_BIN="$GEM_HOME/bin" \
@@ -34,5 +32,4 @@ RUN echo '[ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ] || return' \
 	  chmod 777 "$GEM_HOME" "$BUNDLE_BIN" && \
     gem install bundler
 
-RUN echo "2.7.1" >> ".ruby-version" && \
-ruby --version
+RUN apt-get -y install ruby-all-dev
